@@ -105,11 +105,11 @@ return options;
   
 
 // Function for getting a random element from an array
- /* function getRandom(arr) {
-  let randomPassword = "";
+ // function getRandom(arr) {
+ /* let randomPassword = "";
   for (let i = 0; i <= passLength; i++) {
     randomPassword += Math.floor(Math.random()*bigArray.length); }
-  } */
+  } */ 
     
 
 
