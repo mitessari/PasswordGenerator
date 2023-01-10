@@ -114,7 +114,7 @@ return options;
 
 
 
-//let bigArray = [];
+//let bigArray = []
 // Function to generate password with user input
 function generatePassword(){
   let bigArray = "";
