@@ -94,8 +94,8 @@ function getPasswordOptions() {
   const options = {}
   options.length = prompt("How many Characters from 10-64?");
   options.lowercase = confirm("Include Lowercase Characters?");
-  options.Uppercase = confirm("Include Uppercase Characters?");
-  options.Numeric = confirm("Include Numeric Characters?");
+  options.uppercase = confirm("Include Uppercase Characters?");
+  options.numeric = confirm("Include Numeric Characters?");
   options.special = confirm("Include Special Characters?");
 return options;
 
@@ -118,32 +118,31 @@ return options;
 // Function to generate password with user input
 function generatePassword(){
   let bigArray = "";
-  randomPassword = "";
-    passLength = getPasswordOptions.length;
+  let randomPassword = "";
+   
   const passwordOptions = getPasswordOptions();
   if(passwordOptions.lowercase) {
-    bigArray = bigArray.concat(lowerCasedCharacters);
+    bigArray += lowerCasedCharacters.join("");
   }
-  if(passwordOptions.Uppercase) {
-    bigArray = bigArray.concat(upperCasedCharacters);
+  if(passwordOptions.uppercase) {
+    bigArray += upperCasedCharacters.join("");
   }
   if(passwordOptions.special) {
-    bigArray = bigArray.concat(specialCharacters);
+    bigArray += specialCharacters.join("");
   }
-  if(passwordOptions.Numeric) {
-    bigArray = bigArray.concat(numericCharacters);
-
-  }
-
-
-  for (let i = 0; i <= passLength; i++) {
-    randomPassword += bigArray[Math.floor(Math.random()*bigArray.length)];
+  if(passwordOptions.numeric) {
+    bigArray += numericCharacters.join("");
     
+  }
+
+   const passLength = passwordOptions.length;
+
+  for (let i = 0; i < passLength; i++) {
+    randomPassword += bigArray[Math.floor(Math.random()*bigArray.length)];
+  
+   
   } 
-
-
-
-  console.log(randomPassword);
+  return randomPassword;
 }
 
 
